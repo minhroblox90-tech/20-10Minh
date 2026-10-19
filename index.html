@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 20/10 ✨</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --pink: #ffacd5;
+  --purple: #d5a5ff;
+  --white: #fff7fc;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #100719;
+  color: var(--white);
+  overflow: hidden;
+}
+
+.page {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 100%, #6d275c, transparent 55%),
+    radial-gradient(ellipse at 10% 15%, #492057, transparent 50%),
+    linear-gradient(145deg, #100719, #25102f, #13091d);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.04);
+  transition: opacity .8s ease, transform .8s ease, visibility .8s;
+}
+
+.page.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  z-index: 2;
+}
+
+.glow {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: #e54eae;
+  filter: blur(120px);
+  opacity: .18;
+  animation: breathe 5s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes breathe {
+  to { transform: scale(1.3); opacity: .3; }
+}
+
+.ring {
+  position: absolute;
+  width: min(75vw, 570px);
+  aspect-ratio: 1;
+  border: 1px solid #ffb8e51c;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: spin 35s linear infinite;
+}
+
+.ring::before,
+.ring::after {
+  content: "";
+  position: absolute;
+  border: 1px solid #d6b3ff1b;
+  border-radius: 50%;
+}
+
+.ring::before { inset: 12%; }
+.ring::after { inset: 25%; }
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  width: 92%;
+  max-width: 760px;
+  animation: enter 1.2s ease both;
+}
+
+@keyframes enter {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 7px;
+  color: #f4badb;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(75px, 15vw, 145px);
+  font-weight: 400;
+  letter-spacing: -5px;
+  line-height: 1;
+  background: linear-gradient(135deg, white, #ffb8dc 45%, #d8b7ff 75%, white);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 25px #ff9bd655);
+  animation: titleGlow 4s infinite alternate;
+}
+
+h1 span {
+  display: block;
+  font-size: .22em;
+  letter-spacing: 4px;
+  margin-top: 25px;
+  line-height: 1.5;
+}
+
+@keyframes titleGlow {
+  to { filter: drop-shadow(0 0 38px #ff9bd688); }
+}
+
+.line {
+  width: 100px;
+  height: 1px;
+  margin: 30px auto;
+  background: linear-gradient(90deg, transparent, #ffc5e5, transparent);
+}
+
+.subtitle {
+  color: #f3d7eb;
+  font-size: clamp(13px, 2.5vw, 17px);
+  letter-spacing: 2px;
+  line-height: 1.8;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 38px;
+  padding: 14px 29px;
+  border: 1px solid #ffd0e9a0;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #ffacd52b, #cba2ff26);
+  color: #fff7fc;
+  font: inherit;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  box-shadow: 0 0 30px #f18acb12;
+  transition: .3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #ffacd566, #cba2ff55);
+  box-shadow: 0 0 35px #f18acb55;
+  transform: translateY(-3px);
+}
+
+.rose {
+  position: absolute;
+  font-size: 50px;
+  filter: drop-shadow(0 0 15px #ff70bb77);
+  animation: float 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.r1 { top: 12%; left: 9%; }
+.r2 { top: 18%; right: 10%; animation-delay: -2s; }
+.r3 { bottom: 12%; left: 13%; animation-delay: -3s; }
+.r4 { bottom: 15%; right: 9%; animation-delay: -1s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-8deg); }
+  50% { transform: translateY(-20px) rotate(9deg); }
+}
+
+.sparkle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 8px 2px #ffbde5;
+  animation: twinkle var(--dur) ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: .12; transform: scale(.5); }
+  50% { opacity: 1; transform: scale(1.8); }
+}
+
+.heart {
+  position: absolute;
+  bottom: -40px;
+  left: var(--x);
+  font-size: var(--size);
+  animation: heartUp var(--dur) linear forwards;
+  color: #ffc4e6;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes heartUp {
+  0% { transform: translateY(0) rotate(0); opacity: 0; }
+  10% { opacity: .8; }
+  100% {
+    transform: translate(var(--drift), -110vh) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+/* TRANG 2: BÔNG HOA LỚN */
+
+.flower-content {
+  position: relative;
+  z-index: 3;
+  width: 92%;
+  max-width: 760px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 28px 0;
+  scrollbar-width: none;
+}
+
+.flower-content::-webkit-scrollbar {
+  display: none;
+}
+
+.flower-title {
+  font-family: Georgia, serif;
+  font-size: clamp(27px, 5vw, 43px);
+  font-weight: 400;
+  color: #ffe0f1;
+  text-shadow: 0 0 25px #ff83cb66;
+  margin-bottom: 7px;
+}
+
+.flower-caption {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #dcbce9;
+  margin-bottom: 12px;
+}
+
+.flower-stage {
+  position: relative;
+  width: min(55vw, 300px);
+  min-width: 180px;
+  aspect-ratio: 1;
+  margin: 0 auto 12px;
+  display: grid;
+  place-items: center;
+  filter: drop-shadow(0 0 22px #ff75c544);
+}
+
+.flower-rotator {
+  position: absolute;
+  inset: 0;
+  animation: flowerSpin 22s linear infinite;
+}
+
+@keyframes flowerSpin {
+  to { transform: rotate(360deg); }
+}
+
+.petal {
+  position: absolute;
+  width: 31%;
+  height: 46%;
+  left: 34.5%;
+  top: 4%;
+  transform-origin: 50% 100%;
+  border-radius: 50% 50% 43% 43%;
+  background: linear-gradient(
+    180deg,
+    #fff3fa 0%,
+    #ffb6df 35%,
+    #e76eb8 75%,
+    #9f418d 100%
+  );
+  border: 1px solid #ffe4f688;
+  box-shadow:
+    inset 0 0 12px #fff8ff88,
+    0 0 12px #ff7cc522;
+}
+
+.flower-core {
+  width: 24%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  z-index: 2;
+  background: radial-gradient(circle at 35% 30%,
+    #fffce0, #ffe19a 30%, #f9a6c9 70%, #d75d9c);
+  box-shadow:
+    0 0 15px #ffdf9e,
+    0 0 35px #ff92ceaa,
+    inset 0 0 8px white;
+  animation: corePulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes corePulse {
+  to { transform: scale(1.12); box-shadow: 0 0 35px #ff92ce; }
+}
+
+.flower-halo {
+  position: absolute;
+  inset: -8%;
+  border: 1px solid #ffc4e533;
+  border-radius: 50%;
+  animation: halo 5s ease-in-out infinite alternate;
+}
+
+.flower-halo::before,
+.flower-halo::after {
+  content: "✦";
+  position: absolute;
+  color: #fff2fb;
+  text-shadow: 0 0 12px #ffc0e8;
+  font-size: 18px;
+}
+
+.flower-halo::before { top: 8%; left: 15%; }
+.flower-halo::after { bottom: 8%; right: 15%; }
+
+@keyframes halo {
+  to { transform: scale(1.08); opacity: .4; }
+}
+
+.message-box {
+  min-height: 88px;
+  width: min(92%, 560px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+}
+
+.message {
+  color: #ffe5f4;
+  font-family: Georgia, serif;
+  font-size: clamp(16px, 3vw, 23px);
+  line-height: 1.65;
+  text-shadow: 0 0 20px #ffb0dc44;
+  opacity: 1;
+  transition: opacity .45s, transform .45s;
+}
+
+.message.out {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.message-count {
+  color: #c9a7d7;
+  font-size: 10px;
+  letter-spacing: 3px;
+  margin-top: 3px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.controls .btn {
+  margin-top: 16px;
+  padding: 11px 20px;
+}
+
+.btn.secondary {
+  background: transparent;
+  border-color: #e9c6e955;
+}
+
+.corner {
+  position: absolute;
+  bottom: 15px;
+  left: 18px;
+  color: #ffffff44;
+  font-size: 9px;
+  letter-spacing: 2px;
+  z-index: 4;
+}
+
+@media (max-height: 650px) {
+  .flower-content { padding: 12px 0 24px; }
+  .flower-title { font-size: 26px; }
+  .flower-caption { margin-bottom: 4px; }
+  .flower-stage { width: min(34vh, 210px); min-width: 145px; }
+  .message-box { min-height: 65px; }
+  .message { font-size: 17px; }
+  .controls .btn { margin-top: 8px; }
+  .eyebrow { margin-bottom: 12px; }
+  .line { margin: 20px auto; }
+  .rose { font-size: 34px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flower-rotator, .flower-halo, .flower-core,
+  .rose, .ring, .glow, .sparkle, h1 {
+    animation-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TRANG 1 -->
+<section class="page active" id="page1">
+  <div class="glow"></div>
+  <div class="ring"></div>
+
+  <div class="rose r1">🌹</div>
+  <div class="rose r2">✿</div>
+  <div class="rose r3">🌸</div>
+  <div class="rose r4">🌹</div>
+
+  <div class="content">
+    <p class="eyebrow">A little magic for you</p>
+
+    <h1>
+      20/10
+      <span>HAPPY VIETNAMESE WOMEN'S DAY</span>
+    </h1>
+
+    <div class="line"></div>
+
+    <p class="subtitle">
+      Một thế giới nhỏ ngập tràn hoa và ánh sáng ✨
+    </p>
+
+    <button class="btn" onclick="goToPage(2)">
+      Mở món quà ✨ →
+    </button>
+  </div>
+
+  <div class="corner">SPECIAL EDITION · 2026</div>
+</section>
+
+<!-- TRANG 2 -->
+<section class="page" id="page2">
+  <div class="glow"></div>
+  <div class="ring"></div>
+
+  <div class="flower-content">
+    <p class="flower-caption">A FLOWER JUST FOR YOU</p>
+    <h2 class="flower-title">Gửi cậu một bông hoa 🌷</h2>
+
+    <div class="flower-stage">
+      <div class="flower-halo"></div>
+      <div class="flower-rotator" id="flowerRotator"></div>
+      <div class="flower-core"></div>
+    </div>
+
+    <div class="message-box">
+      <p class="message" id="message">
+        Chúc cậu có một ngày 20/10 thật vui vẻ và hạnh phúc. 💗
+      </p>
+    </div>
+
+    <p class="message-count" id="messageCount">01 / 12 · A LITTLE WISH</p>
+
+    <div class="controls">
+      <button class="btn secondary" onclick="previousWish()">
+        ← Câu trước
+      </button>
+
+      <button class="btn" onclick="nextWish()">
+        Lời chúc tiếp theo ✨ →
+      </button>
+    </div>
+
+    <button class="btn secondary" onclick="goToPage(1)">
+      ↩ Quay lại trang đầu
+    </button>
+  </div>
+
+  <div class="corner">MADE WITH LOVE · 20.10</div>
+</section>
+
+<script>
+const page1 = document.getElementById("page1");
+const page2 = document.getElementById("page2");
+const sceneElements = [page1, page2];
+
+// Chuyển trang
+function goToPage(number) {
+  sceneElements.forEach((page, index) => {
+    page.classList.toggle("active", index === number - 1);
+  });
+}
+
+// Tạo 12 cánh hoa
+const rotator = document.getElementById("flowerRotator");
+const petalCount = 12;
+
+for (let i = 0; i < petalCount; i++) {
+  const petal = document.createElement("div");
+  petal.className = "petal";
+  petal.style.transform = `rotate(${i * 360 / petalCount}deg)`;
+  rotator.appendChild(petal);
+}
+
+// Danh sách lời chúc
+const wishes = [
+  "Chúc cậu có một ngày 20/10 thật vui vẻ và hạnh phúc. 💗",
+  "Mong cậu luôn cười thật nhiều, vì nụ cười của cậu rất đáng quý. 🌷",
+  "Chúc mọi điều dịu dàng và tốt đẹp nhất sẽ đến với cậu. ✨",
+  "Mong hôm nay cậu nhận được thật nhiều niềm vui và những điều bất ngờ. 🎁",
+  "Chúc cậu luôn tự tin, tỏa sáng theo cách riêng của mình. 🌟",
+  "Mong những ngày phía trước của cậu luôn ngập tràn tiếng cười. 💕",
+  "Chúc cậu học tập thật tốt, gặp nhiều may mắn và luôn vui vẻ. 🌸",
+  "Hy vọng mỗi ngày của cậu đều có một điều nhỏ bé khiến cậu hạnh phúc. 🦋",
+  "Chúc cô gái tuyệt vời luôn được yêu thương và trân trọng. 🌹",
+  "Mong những ước mơ của cậu từng bước trở thành hiện thực. 🌙",
+  "Chúc cậu luôn gặp những người tử tế và những chuyện dễ thương. 💖",
+  "Cuối cùng, chúc cậu một ngày 20/10 thật đặc biệt. Happy Women's Day! 💐"
+];
+
+let currentWish = 0;
+const message = document.getElementById("message");
+const counter = document.getElementById("messageCount");
+
+function showWish() {
+  message.classList.add("out");
+
+  setTimeout(() => {
+    message.textContent = wishes[currentWish];
+    counter.textContent =
+      String(currentWish + 1).padStart(2, "0") +
+      " / " + String(wishes.length).padStart(2, "0") +
+      " · A LITTLE WISH";
+
+    message.classList.remove("out");
+  }, 350);
+}
+
+function nextWish() {
+  currentWish = (currentWish + 1) % wishes.length;
+  showWish();
+}
+
+function previousWish() {
+  currentWish = (currentWish - 1 + wishes.length) % wishes.length;
+  showWish();
+}
+
+// Tự tạo hạt sáng trên cả hai trang
+for (const scene of sceneElements) {
+  for (let i = 0; i < 65; i++) {
+    const dot = document.createElement("i");
+    dot.className = "sparkle";
+    dot.style.left = Math.random() * 100 + "%";
+    dot.style.top = Math.random() * 100 + "%";
+    dot.style.setProperty("--dur", (2 + Math.random() * 4) + "s");
+    dot.style.animationDelay = -Math.random() * 5 + "s";
+    scene.appendChild(dot);
+  }
+}
+
+// Trái tim bay
+const heartSymbols = ["♡", "♥", "✧", "💕"];
+
+function createHeart(scene) {
+  const heart = document.createElement("span");
+  heart.className = "heart";
+  heart.textContent =
+    heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+
+  heart.style.setProperty("--x", Math.random() * 100 + "%");
+  heart.style.setProperty("--size", (12 + Math.random() * 22) + "px");
+  heart.style.setProperty("--dur", (8 + Math.random() * 6) + "s");
+  heart.style.setProperty("--drift", (-80 + Math.random() * 160) + "px");
+
+  scene.appendChild(heart);
+  setTimeout(() => heart.remove(), 15000);
+}
+
+for (const scene of sceneElements) {
+  for (let i = 0; i < 10; i++) {
+    setTimeout(() => createHeart(scene), i * 450);
+  }
+}
+
+setInterval(() => {
+  for (const scene of sceneElements) {
+    if (scene.classList.contains("active")) {
+      createHeart(scene);
+    }
+  }
+}, 650);
+
+// Tạo ánh sáng khi nhấp chuột
+document.addEventListener("click", event => {
+  if (!event.target.closest("button")) {
+    const scene = event.target.closest(".page");
+    if (!scene) return;
+
+    for (let i = 0; i < 7; i++) {
+      const star = document.createElement("span");
+      star.textContent = "✦";
+      star.style.cssText = `
+        position:absolute;
+        left:${event.clientX}px;
+        top:${event.clientY}px;
+        color:#ffe4f5;
+        font-size:${10 + Math.random() * 12}px;
+        pointer-events:none;
+        z-index:10;
+        transition:all .9s ease-out;
+      `;
+
+      scene.appendChild(star);
+
+      const dx = (Math.random() - .5) * 150;
+      const dy = (Math.random() - .5) * 150;
+
+      requestAnimationFrame(() => {
+        star.style.transform =
+          `translate(${dx}px,${dy}px) rotate(180deg) scale(0)`;
+        star.style.opacity = "0";
+      });
+
+      setTimeout(() => star.remove(), 1000);
+    }
+  }
+});
+</script>
+
+</body>
+</html>
